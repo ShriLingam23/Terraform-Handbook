@@ -1,4 +1,12 @@
 terraform {
+
+    backend "remote" {
+      organization = "terraform-init-learn"
+      workspaces {
+        name = "test-env"
+      }
+    }
+
   required_providers {
     aws = {
         source = "hashicorp/aws"
